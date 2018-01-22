@@ -1,30 +1,32 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>ok</h2>
+    <h2>say hello word</h2>
     <ul>
       <li>
         <a
           href="https://vuejs.org"
           target="_blank"
         >
-          Core Docs
+          ok yes
         </a>
+        <button id="gr" @click="getRequest">get request</button>
       </li>
       <li>
         <a
           href="https://forum.vuejs.org"
           target="_blank"
         >
-          Forum
+         🐂
         </a>
+        <button id="pr" v-on:click="postRequest">post request</button>
       </li>
       <li>
         <a
           href="https://chat.vuejs.org"
           target="_blank"
         >
-          Community Chat
+          🌹
         </a>
       </li>
       <li>
@@ -32,7 +34,7 @@
           href="https://twitter.com/vuejs"
           target="_blank"
         >
-          Twitter
+        🐦
         </a>
       </li>
       <br>
@@ -41,18 +43,18 @@
           href="http://vuejs-templates.github.io/webpack/"
           target="_blank"
         >
-          Docs for This Template
+        🇨🇳
         </a>
       </li>
     </ul>
-    <h2>Ecosystem</h2>
+    <h2>🇺🇸</h2>
     <ul>
       <li>
         <a
           href="http://router.vuejs.org/"
           target="_blank"
         >
-          vue-router
+        🐔
         </a>
       </li>
       <li>
@@ -60,7 +62,7 @@
           href="http://vuex.vuejs.org/"
           target="_blank"
         >
-          vuex
+          🐶
         </a>
       </li>
       <li>
@@ -68,7 +70,7 @@
           href="http://vue-loader.vuejs.org/"
           target="_blank"
         >
-          vue-loader
+        🐱
         </a>
       </li>
       <li>
@@ -76,7 +78,7 @@
           href="https://github.com/vuejs/awesome-vue"
           target="_blank"
         >
-          awesome-vue
+          🐭
         </a>
       </li>
     </ul>
@@ -84,11 +86,26 @@
 </template>
 
 <script>
+import axios from 'axios'
+var client = axios.create({
+      baseURL:'https://api.github.com'
+    })
+
 export default {
-  name: 'HelloWorld',
+  name: 'yes',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'come on 吃鸡'
+    }
+  },
+  methods: {
+    getRequest() {
+      client.get('/users/cnkcq')
+        .then(res => console.log(res))
+      
+    },
+    postRequest() {
+      console.log('post request')
     }
   }
 }
@@ -106,8 +123,21 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+  border-color: blue;
+  border-width: medium;
 }
 a {
-  color: #42b983;
+  color: #b94252;
+}
+div {
+  border-color: blue;
+  border-width: medium;
+  background-color: blueviolet;
+}
+#pr, #gr {
+  width: 50;
+  height: 44;
+  background-color: blue;
+  text-decoration-color: aliceblue;
 }
 </style>

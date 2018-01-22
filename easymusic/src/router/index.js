@@ -13,3 +13,9 @@ export default new Router({
     }
   ]
 })
+
+function hello () {
+  console.log('hi')
+}
+
+hello()
