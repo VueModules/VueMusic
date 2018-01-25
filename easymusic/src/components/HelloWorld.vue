@@ -88,8 +88,9 @@
 <script>
 import axios from 'axios'
 var client = axios.create({
-      baseURL:'https://api.github.com'
+      baseURL:'http://www.localhost:8080'
     })
+
 
 export default {
   name: 'yes',
@@ -98,12 +99,14 @@ export default {
       msg: 'come on 吃鸡'
     }
   },
+
   methods: {
+
     getRequest() {
-      client.get('/users/cnkcq')
+      client.get('/top/playlist/highquality')
         .then(res => console.log(res))
-      
     },
+
     postRequest() {
       console.log('post request')
     }
